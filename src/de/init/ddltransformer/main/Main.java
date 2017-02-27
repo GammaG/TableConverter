@@ -22,6 +22,7 @@ public class Main {
 		}
 		
 		ArrayList<Table> tables = new Converter(new FileReader().readFile(path)).parseTables();
+		System.out.println("There have been "+ tables.size() + " tables been found.");
 		new CSVWriter().createCSV(tables);
 		
 	}
