@@ -41,7 +41,10 @@ public class Converter {
 			if(item.isEmpty())
 				continue;
 			String key = item.substring(0, item.indexOf(" ")).replaceAll("\"", "");
-			String value = item.substring(item.indexOf(" ")+1,item.length()-1);	
+			String value = item.substring(item.indexOf(" ")+1,item.length());
+			if(value.endsWith(",")){
+				value = value.substring(0, value.length()-1);
+			}			
 			table.addElement(key, value);			
 		}
 		return table;

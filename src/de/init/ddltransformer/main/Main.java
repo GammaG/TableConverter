@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import de.init.ddltransformer.converter.Converter;
 import de.init.ddltransformer.loader.FileReader;
 import de.init.ddltransformer.model.Table;
+import de.init.ddltransformer.writer.CSVWriter;
 
 public class Main {
 
@@ -21,9 +22,7 @@ public class Main {
 		}
 		
 		ArrayList<Table> tables = new Converter(new FileReader().readFile(path)).parseTables();
-		for(Table table: tables){
-			System.out.println(table);
-		}
+		new CSVWriter().createCSV(tables);
 		
 	}
 }
